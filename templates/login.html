@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+  {% block title %}
+    Login
+ {% endblock %}
+{% block body %}
+    <section>
+    <h1>You need to be logged in to get access to your pictures!</h1>
+        <form action="/login" method="POST">
+            <div class="login">
+            <input type="text" value="miguel.margodt@student.howest.be" placeholder="e-mail" name="username">
+            <label for="login-name"></label>
+
+            <input type="password" value="test123" placeholder="password" name="password">
+            <label for="login-pass"></label>
+            <div style="width:80%">
+                <button type="submit" style="float:left;">Log in</button></div></div></form>
+        <form action="/signup">
+            <div class="login" style="width:80%;">
+            <button type="submit" style="float:right;">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </section>
+    <div class="hoogteLogin"></div>
+{% endblock %}

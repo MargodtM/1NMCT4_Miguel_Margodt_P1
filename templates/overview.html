@@ -1,0 +1,22 @@
+ {% extends "base.html" %}
+  {% block title %}
+    Overview
+ {% endblock %}
+{% block overview %}
+        class="current"
+{% endblock %}
+{% block body %}
+    <section>
+    <h1>Pictures</h1>
+    <div class="snapguard-pics">
+    {% for pic in pics %}
+            <div class="snapguard-pics__pic">
+                <figure>
+                     <a href="{{ url_for('picdetails',picid=pic[4]) }}"><img src="{{ url_for('static',filename='images/'+pic[2]) }}" /></a>
+                     <figcaption>{{ pic[3] }}</figcaption>
+                </figure>
+            </div>
+    {% endfor %}
+    </div>
+    </section>
+{%  endblock %}

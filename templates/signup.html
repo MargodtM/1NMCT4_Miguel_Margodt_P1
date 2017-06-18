@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+  {% block title %}
+    Login
+ {% endblock %}
+{% block body %}
+    <section>
+    <h1>Sign up</h1>
+    <form action="/register" class="login" method="POST" >
+
+        <input type="text" placeholder="First name" name="fname">
+        <input type="text" placeholder="Last name" name="lname">
+        <input type="email" placeholder="E-mail" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <button type="submit" style="width:80%;">Get started!</button>
+
+
+    </form>
+
+    </section>
+{% endblock %}

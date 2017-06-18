@@ -1,0 +1,29 @@
+ {% extends "base.html" %}
+ {% block title %}
+ Cameras
+ {% endblock %}
+{% block cameras %}
+    class="current"
+{% endblock %}
+{% block body %}
+    <section>
+    <h1>Cameras</h1>
+    <table>
+    <tr><th>Camera number</th><th>Resolution</th><th>Place</th><th>Edit</th></tr>
+    {% for camera in cameras %}
+    <tr><td>{{ camera[0] }}</td><td>{{ camera[2] }}</td><td>{{ camera[1] }}</td><td><a href="/camdetails/{{ camera[0] }}"><img class="editImg" src="{{ url_for('static',filename='images/edit.png') }}"></a></td></tr>
+    {% endfor %}
+    </table>
+    </section>
+    <section>
+    <h1>Add a camera to your account</h1>
+    <form action="/addcamera" method="POST">
+        <div class="login">
+        <input type="text" placeholder="Enter camera ID" name="camid">
+            <div style="width:50%;">
+        <button >Submit</button>
+                </div>
+            </div>
+    </form>
+    </section>
+{% endblock %}

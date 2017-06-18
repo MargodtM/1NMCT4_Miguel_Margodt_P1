@@ -1,0 +1,28 @@
+ {% extends "base.html" %}
+{% block title %}
+    Edit
+ {% endblock %}
+
+ {% block body %}
+     <section>
+     <h1>Camera</h1>
+     <table>
+        <tr><th>Camera number</th><th>Resolution</th><th>Place</th></tr>
+         <tr><td>{{ cam[0] }}</td><td>{{ cam[1] }}</td><td>{{ cam[2] }}</td></tr>
+     </table>
+    </section>
+     <section>
+     <h1>Edit place</h1>
+         <form action="/editplace   " method="POST">
+             <div class="login">
+                 <input type="hidden" value="{{ cam[0] }}" name="camid">
+                <label for="camid"></label>
+                <input type="text" value="" placeholder="New place" name="newplace">
+                <label for="newplace"></label>
+              <button type="submit">Change</button>
+                 </div>
+         </form>
+     <div style="height:6px"></div>
+
+     </section>
+ {% endblock %}

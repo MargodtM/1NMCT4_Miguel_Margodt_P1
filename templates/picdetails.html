@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{pic[0]}}
+{% endblock %}
+{% block body %}
+    <section>
+    <h1>{{ pic[2] }}</h1>
+     <img class="picdetails" src="{{ url_for('static',filename='images/'+pic[1]) }}" />
+
+
+        <form action="/deletePic" method="POST">
+        <input type="hidden" value="{{ pic[0] }}" name="pic_to_delete"> </input>
+            <label for="pic_to_delete"></label>
+        <button type="submit">Delete picture</button>
+        </form>
+      </section>
+{% endblock %}

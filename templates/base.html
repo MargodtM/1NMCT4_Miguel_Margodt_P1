@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>
+        Snapguard - {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+{% block header %}
+
+    <header>
+
+		<a href="../" id="logo"></a>
+
+		<nav>
+
+
+			<ul>
+
+				<li><a href="{{ url_for('overview') }}" {% block overview %} {% endblock %}>Pictures</a></li>
+                <li><a href="{{ url_for('cameras') }}" {% block cameras %} {% endblock%}>Cameras</a> </li>
+				{%if session['logged_in'] == True %}
+                    <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('overview') }}">Log in</a></li>
+                {% endif %}
+
+			</ul>
+
+		</nav>
+
+	</header>
+
+{%  endblock %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="{{ url_for('overview') }}" >Pictures</a>
+                    <a href="{{ url_for('cameras') }}"> Cameras</a>
+				{%if session['logged_in'] == True %}
+                   <a href="{{ url_for('logout') }}">Log out</a>
+                {% else %}
+                 <a href="{{ url_for('overview') }}">Log in</a>
+                {% endif %}
+				</p>
+
+				<p>Miguel Margodt &copy; 2017</p>
+			</div>
+
+	</footer>
+{% endblock %}
+
+</body>
+</html>
