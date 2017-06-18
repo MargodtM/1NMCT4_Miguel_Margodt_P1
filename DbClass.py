@@ -2,17 +2,10 @@ class DbClass:
     def __init__(self):
         import mysql.connector as connector
 
-        # self.__dsn = {
-        #     "host": "localhost",
-        #     "user": "finley",
-        #     "passwd": "some_pass",
-        #     "db": "snapguard"
-        # }
-
         self.__dsn = {
             "host": "localhost",
-            "user": "root",
-            "passwd": "MM1998ma$",
+            "user": "YOUR USERNAME",
+            "passwd": "YOUR PASSWORD",
             "db": "snapguard"
         }
 
